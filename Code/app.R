@@ -1,6 +1,6 @@
-# RShiny app for displaying CanFlux map and data visualization
+# RShiny app for displaying CanFlux map
 # Rosie Howard
-# 19 August 2025
+# 16 October 2025
 # Based on https://github.com/norlab/ameriflux-analysis (displayed here:https://bree.shinyapps.io/Canadian-AmeriFlux-Sites/) by Bree Norlander
 
 # This is a Shiny web application. You can run the application by clicking
@@ -53,7 +53,7 @@ load("/Users/rosie/Documents/Micromet/CANFLUX_Database/canflux-summary/Data/data
 # ***Eventually site list from loaded data above and site list from Site Information page (tsv file) may match!***
 # Temporary solution: rename map sites as sites_map so previous site list is not overwritten
 # sites_map <- read_tsv(file = "https://raw.githubusercontent.com/rosiehoward/canflux-summary/refs/heads/main/Data/AmeriFlux-sites-Canadian-ForApp.tsv", show_col_types = FALSE)
-sites_map <- read_tsv(file = "https://raw.githubusercontent.com/rosiehoward/canflux-summary/refs/heads/main/Data/Canadian-Flux-Sites_DownloadedFromGoogleSheet3Oct2025_withLatLons.tsv", show_col_types = FALSE)
+sites_map <- read_tsv(file = "https://raw.githubusercontent.com/rosiehoward/canflux-summary-map/refs/heads/main/Data/Canadian-Flux-Sites_DownloadedFromGoogleSheet3Oct2025_withLatLons.tsv", show_col_types = FALSE)
 
 #sites_map <- read_tsv(file = "https://github.com/rosiehoward/canflux-summary/blob/df9d52942ffe949e076bbe139b20eb8366076d28/Data/AmeriFlux-sites-Canadian.tsv", show_col_types = FALSE)
 #sites_map <- read_tsv(file = "https://raw.githubusercontent.com/rosiehoward/canpeat-summary/refs/heads/main/Data/CanPeat-TSV.tsv", show_col_types = FALSE)
