@@ -12,6 +12,7 @@
 #
 
 library(shiny)
+library(mailtoR)
 library(shinythemes)
 library(readr)
 library(ggplot2)
@@ -146,7 +147,9 @@ ui <- dashboardPage(skin = 'black', # Begin UI
                           fluidRow(column(12,
                                   p(paste0("Sample of ", total_sites, " Canadian eddy-covariance research sites for which 
                                             data has been collected at any time. This sample represents flux sites across Canada 
-                                            associated with ", total_pi, " Principal Investigators. Further sites can be added as needed.")),
+                                            associated with approximately ", total_pi, " Principal Investigators. Further sites and information will be added as data becomes available.")),
+                                  # p(paste0("Note that data included here is the best available at time of publishing and contains uncertainties. If you notice any errors or have site information to add, please contact: "), 
+                                  #           mailtoR(email = "ecofluxlab@gmail.com", text = "ecofluxlab@gmail.com", subject = "CanFlux Metadata Inquiry"),"."),
                           )),# End fluidrow 
                           fluidRow(column(8,
                                  h2("Map View")
@@ -168,7 +171,19 @@ ui <- dashboardPage(skin = 'black', # Begin UI
                           fluidRow(column(12,
                                           DT::dataTableOutput(outputId = "CanFlux_Table")
                           )
-                          ) # End fluidRow
+                          ), # End fluidRow
+                          
+                          # Start footer
+                          fluidRow(br()),
+                          fluidRow(column(12,
+                                          tags$footer(
+                                            p(paste0("Note that data included here is the best available at time of publishing and contains uncertainties. If you notice any errors or have site information to add, please contact: ecofluxlab (at) gmail (dot) com.")),
+                                            class = "footer"
+                                          )
+                          )
+                          )
+                          # End footer
+                          
                         ),  # End 'Site Information' page (end MAP)
 
                         tabItem( # Begin 'About' page
@@ -177,9 +192,11 @@ ui <- dashboardPage(skin = 'black', # Begin UI
 
                         h3('Data Sources'),
                         h4(style="text-align: justify;",
-                           "The metadata presented in the Site Information display were gathered from directly from the ",
+                           "The metadata presented in the Site Information display were gathered directly from the ",
                            tags$a(href = 'https://ameriflux.lbl.gov/sites/site-search/#', 'AmeriFlux Site Search', target="_blank"),
-                           " table if available, otherwise from PIs, Data Managers, or other pers. comms., in August 2025."
+                           " table if available, otherwise from PIs, Data Managers, or other pers. comms.. Collection began in August 2025. 
+                           Data included here is the best available at time of publishing and contains uncertainties. 
+                           If you notice any errors or have site information to add, please contact: ecofluxlab (at) gmail (dot) com."
                                       ),
                            br(),
                            h3('Acknowledgements'),
