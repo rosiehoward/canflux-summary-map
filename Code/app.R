@@ -43,13 +43,11 @@ rowCallback <- c(
 )
 # End define rowCallback function
 
-# Read in datasets
+# Read in datasets - NOT needed for map function only.
 
 # need to somehow read data in... run RShiny vizualization code first and save/point to output data for that database (temporarily using "CanPeat" data so it works)
 # This only works locally - cannot publish Shiny app from this (later use cloud or other on McGill server?)
-load("/Users/rosie/Documents/Micromet/CANFLUX_Database/canflux-summary/Data/data_tmp/all_data.RData")  # code must have been run first to create this data set
-
-#browser()
+#load("/Users/rosie/Documents/Micromet/CANFLUX_Database/canflux-summary/Data/data_tmp/all_data.RData")  # code must have been run first to create this data set
 
 # ***Eventually site list from loaded data above and site list from Site Information page (tsv file) may match!***
 # Temporary solution: rename map sites as sites_map so previous site list is not overwritten
